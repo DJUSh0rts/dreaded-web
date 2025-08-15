@@ -351,3 +351,66 @@ if (stage && dotsWrap && prevBtn && nextBtn && creators.length) {
   fetchStatus();
   setInterval(fetchStatus, 60000);
 })();
+
+/* ========== YOUTUBE RECS RENDERER ========== */
+(function initYouTubeRecs(){
+  const grid = document.getElementById("videoGrid");
+  const dataEl = document.getElementById("youtubeRecs");
+  if (!grid || !dataEl) return;
+
+  let videos = [];
+  try {
+    videos = JSON.parse(dataEl.textContent.trim());
+  } catch(e) {
+    console.warn("Invalid youtubeRecs JSON", e);
+    return;
+  }
+
+  // Build cards
+  grid.innerHTML = "";
+  videos.forEach(v => {
+    const id = v.id;
+    const url = `https://www.youtube.com/watch?v=${encodeURIComponent(id)}`;
+    const thumbHQ = `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
+    const thumbFallback = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+
+    const a = document.createElement("a");
+    a.className = "video-card";
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.setAttribute("aria-label", `${v.title} by ${v.channel || v.creator || "creator"}`);
+
+    const thumb = document.createElement("div");
+    thumb.className = "thumb";
+    const img = document.createElement("img");
+    img.alt = v.title || "Video thumbnail";
+    img.loading = "lazy";
+    img.src = thumbHQ;
+    img.onerror = () => { img.src = thumbFallback; };
+    thumb.appendChild(img);
+
+    // Play overlay
+    const overlay = document.createElement("div");
+    overlay.className = "play";
+    overlay.innerHTML = `
+      <div class="btn" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+    `;
+    thumb.appendChild(overlay);
+
+    const meta = document.createElement("div");
+    meta.className = "meta";
+    const title = document.createElement("div");
+    title.className = "vtitle";
+    title.textContent = v.title || "Untitled video";
+    const byline = document.createElement("div");
+    byline.className = "byline";
+    byline.textContent = `${v.creator || v.channel || ""}${v.published ? " • " + new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(new Date(v.published)) : ""}`;
+
+    meta.append(title, byline);
+    a.append(thumb, meta);
+    grid.appendChild(a);
+  });
+})();
