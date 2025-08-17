@@ -815,3 +815,42 @@ body.sidebar-open .store-promo {
 .badge.curse {
   background-color: #d9534f; /* red */
 }
+
+/* Command reference table */
+.command-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.command-table th,
+.command-table td {
+  border: 1px solid #3a3a3a;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.command-table th {
+  background: #2a2a2a;
+  color: #eee;
+  font-weight: bold;
+}
+
+.command-table tr:nth-child(even) {
+  background: #1e1e1e;
+}
+
+/* Command chips */
+.cmd-chip {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+  background: #3b3f4a;
+  color: #e8e8e8;
+  border-radius: 6px;
+  border: 1px solid #50545c;
+  white-space: nowrap;
+}

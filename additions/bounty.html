@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dreaded Dragons – Bounties</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body data-page="Additions">
+  <!-- Header -->
+  <header class="site-header">
+    <button class="menu-btn" aria-label="Open menu" aria-haspopup="dialog" aria-controls="sidebar" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" fill="none" stroke-width="2"/>
+      </svg>
+    </button>
+    <h1 class="logo">Dreaded <span>Dragons</span> – Addition</h1>
+  </header>
+
+  <!-- Sidebar + overlay -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="sidebar" id="sidebar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="sidebarTitle">
+    <div class="sidebar-head">
+      <h2 class="sidebar-title" id="sidebarTitle">Menu</h2>
+      <button class="close-btn" id="closeSidebar" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" fill="none" stroke-width="2"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="side-nav">
+      <ul id="menuList" class="menu-list"></ul>
+    </nav>
+  </aside>
+
+  <!-- Store Promo (floating left) -->
+  <aside class="store-promo">
+    <div class="promo-card">
+      <div class="promo-image">
+        <img src="../images/store/plushie.png" alt="Server Plushie">
+      </div>
+      <div class="promo-content">
+        <h3>Support the SMP!</h3>
+        <p>Grab exclusive merch and plushies from our store.</p>
+        <a href="https://store.ddragon.net" class="promo-btn">Visit Store</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="container">
+    <section class="hero">
+      <p>Full details for the <strong>Bounties</strong> addition to the SMP.</p>
+    </section>
+
+    <section class="addition-detail">
+      <h2>Bounties</h2>
+      <p class="subtitle">
+        This system is the <strong>only allowed way</strong> for players to fight each other.  
+        If you want a player eliminated, you must place a bounty on them. No bounty = no PvP.
+      </p>
+
+      <h3>How It Works</h3>
+      <ul>
+        <li>Use <code>/bounty add &lt;player&gt;</code> while holding an item in your <strong>main hand</strong> to place a bounty.</li>
+        <li>Placing a bounty <strong>costs 15 diamonds</strong> (taken from you on placement).</li>
+        <li>The item in your main hand becomes the <strong>bounty reward</strong> on the target.</li>
+        <li>Anyone can attempt the bounty. The first to succeed can <strong>claim the reward</strong>.</li>
+      </ul>
+
+
+      <h3>PvP Rules (Read Before Fighting)</h3>
+      <ul>
+        <li><strong>No bounty, no PvP.</strong> You may only attack a player if there is an active bounty on them.</li>
+        <li>Griefing and exploits are still disallowed — normal server rules apply.</li>
+        <li>Once a bounty is successfully claimed, hostilities must cease unless another bounty exists.</li>
+      </ul>
+
+      <h3>Allowed Bounty Items</h3>
+      <p>Only the following items can be used as bounty rewards (must be held in your main hand when running <code>/bounty add</code>):</p>
+
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem;max-width:720px">
+        <span class="chip">Diamond</span>
+        <span class="chip">Diamond Block</span>
+        <span class="chip">Gold Ingot</span>
+        <span class="chip">Gold Block</span>
+        <span class="chip">Netherite Ingot</span>
+        <span class="chip">Netherite Block</span>
+        <span class="chip">Iron Block</span>
+        <span class="chip">Emerald</span>
+        <span class="chip">Emerald Block</span>
+        <span class="chip">Netherite Scrap</span>
+        <span class="chip">Gunpowder</span>
+        <span class="chip">TNT</span>
+        <span class="chip">Ender Eye</span>
+        <span class="chip">Elytra</span>
+        <span class="chip">Amethyst Shard</span>
+        <span class="chip">Echo Shard</span>
+        <span class="chip">Nether Star</span>
+        <span class="chip">Firework Rocket</span>
+        <span class="chip">Netherite Upgrade Template</span>
+        <span class="chip">Golden Apple</span>
+        <span class="chip">Diamond Hoe</span>
+        <span class="chip">Diamond Axe</span>
+        <span class="chip">Netherite Axe</span>
+        <span class="chip">Iron Axe</span>
+        <span class="chip">Dragon Egg</span>
+      </div>
+
+      <h3>Command Reference</h3>
+<div class="table-wrapper">
+  <table class="command-table">
+    <thead>
+      <tr>
+        <th>Command</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="cmd-chip">/bounty add &lt;player&gt;</span></td>
+        <td>Place a bounty using your mainhand item; costs 15 diamonds.</td>
+      </tr>
+      <tr>
+        <td><span class="cmd-chip">/bounty list &lt;player&gt;</span></td>
+        <td>View all bounties on a specific player.</td>
+      </tr>
+      <tr>
+        <td><span class="cmd-chip">/bounty listbounties</span></td>
+        <td>List all active bounties on the server.</td>
+      </tr>
+      <tr>
+        <td><span class="cmd-chip">/bounty listclaim</span></td>
+        <td>Show bounties you can claim.</td>
+      </tr>
+      <tr>
+        <td><span class="cmd-chip">/bounty claim</span></td>
+        <td>Claim the reward for a completed bounty.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+      <a href="../additions.html" class="back-link">← Back to Additions</a>
+    </section>
+  </main>
+
+  <!-- Site pages menu data -->
+  <script id="sitePages" type="application/json">
+  [
+    { "title": "Home",       "href": "../index.html" },
+    { "title": "Updates",    "href": "../updates.html" },
+    { "title": "Additions",  "href": "../additions.html" },
+    { "title": "Store",      "href": "https://store.ddragon.net", "external": true },
+    { "title": "Discord",    "href": "https://discord.gg/QEj9WFUAbm", "external": true }
+  ]
+  </script>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>
