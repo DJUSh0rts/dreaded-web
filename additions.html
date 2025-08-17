@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dreaded Dragons – Additions</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-page="Additions">
+  <header class="site-header">
+    <button class="menu-btn" aria-label="Open menu" aria-haspopup="dialog" aria-controls="sidebar" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+    </button>
+    <h1 class="logo">Dreaded <span>Dragons</span> – Additions</h1>
+  </header>
+
+  <!-- Sidebar + overlay -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="sidebar" id="sidebar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="sidebarTitle">
+    <div class="sidebar-head">
+      <h2 class="sidebar-title" id="sidebarTitle">Menu</h2>
+      <button class="close-btn" id="closeSidebar" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" fill="none" stroke-width="2"/></svg>
+      </button>
+    </div>
+    <nav class="side-nav">
+      <ul id="menuList" class="menu-list"></ul>
+    </nav>
+  </aside>
+
+  <!-- ===== Store Promo Section ===== -->
+<section class="store-promo container">
+  <div class="promo-card">
+    <div class="promo-image">
+      <img src="images/store/plushie.png" alt="Penguin Plushie" loading="lazy">
+    </div>
+    <div class="promo-content">
+      <h3>Get Your SMP Plushie!</h3>
+      <p>Bring a pall with you on your fun adventures throughout the world.</p>
+      <a href="https://store.ddragon.net/category/plushies" target="_blank" rel="noopener" class="promo-btn">Visit Store</a>
+    </div>
+  </div>
+</section>
+
+  <main class="container">
+    <section class="hero">
+      <p>Browse new <strong>additions</strong> to the SMP. Click a card to view full details, rules, and how to use it.</p>
+    </section>
+
+    <!-- Additions grid -->
+    <section class="additions-grid" aria-label="Additions">
+      <!-- Card 1 -->
+      <a class="addition-card" href="additions/knives.html" aria-label="Knives – details">
+        <div class="addition-thumb">
+          <img src="images/additions/thumbnails/knives.png" alt="Knives Overview" loading="lazy">
+        </div>
+        <div class="addition-meta">
+          <h3 class="addition-title">Knives</h3>
+          <p class="addition-desc">Knives powered by different shard materials.</p>
+          <span class="chip chip-added">New</span>
+        </div>
+      </a>
+
+      <a class="addition-card" href="additions/charms.html" aria-label="Charms – details">
+        <div class="addition-thumb">
+          <img src="images/additions/thumbnails/charms.png" alt="Charms Overview" loading="lazy">
+        </div>
+        <div class="addition-meta">
+          <h3 class="addition-title">Charms</h3>
+          <p class="addition-desc">Charms may just be your lucky day..</p>
+          <span class="chip chip-added">New</span>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <!-- Site pages menu data -->
+  <script id="sitePages" type="application/json">
+  [
+    { "title": "Home",       "href": "index.html" },
+    { "title": "Additions",  "href": "additions.html" },
+    { "title": "Store",      "href": "store.ddragon.net", "external": true },
+    { "title": "Discord",    "href": "https://discord.gg/QEj9WFUAbm", "external": true }
+  ]
+  </script>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
