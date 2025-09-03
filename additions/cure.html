@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dreaded Dragons – The Cure</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body data-page="Additions">
+  <!-- Header -->
+  <header class="site-header">
+    <button class="menu-btn" aria-label="Open menu" aria-haspopup="dialog" aria-controls="sidebar" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" fill="none" stroke-width="2"/>
+      </svg>
+    </button>
+    <h1 class="logo">Dreaded <span>Dragons</span> – Addition</h1>
+  </header>
+
+  <!-- Sidebar + overlay -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="sidebar" id="sidebar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="sidebarTitle">
+    <div class="sidebar-head">
+      <h2 class="sidebar-title" id="sidebarTitle">Menu</h2>
+      <button class="close-btn" id="closeSidebar" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" fill="none" stroke-width="2"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="side-nav">
+      <ul id="menuList" class="menu-list"></ul>
+    </nav>
+  </aside>
+
+  <!-- Store Promo -->
+  <aside class="store-promo">
+    <div class="promo-card">
+      <div class="promo-image">
+        <img src="../images/store/plushie.png" alt="Server Plushie">
+      </div>
+      <div class="promo-content">
+        <h3>Support the SMP!</h3>
+        <p>Grab exclusive merch and plushies from our store.</p>
+        <a href="https://store.ddragon.net" class="promo-btn">Visit Store</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="container">
+    <section class="hero">
+      <p>Full details for the <strong>Cure</strong> addition to the SMP.</p>
+    </section>
+
+    <section class="addition-detail">
+      <h2>The Cure</h2>
+      <p class="subtitle">
+        The Cure is a special upgrade to the <strong>Totem of Undying</strong> that allows players to remove
+        <em>all curses and blessings</em> granted by charms. Use it when you want a fresh start, free from the risks
+        and rewards of charms.
+      </p>
+
+      <h3>How It Works</h3>
+      <ul>
+        <li>Craft a <strong>Tampered Totem</strong> using a Smithing Table.</li>
+        <li>When activated, it removes <strong>all active curses and blessings</strong> from your character.</li>
+        <li>Functions only once, similar to how a normal totem is consumed.</li>
+      </ul>
+
+      <h3>Recipe</h3>
+      <p>Smithing Table Upgrade:</p>
+      <ul>
+        <li>Base Item: <strong>Totem of Undying</strong></li>
+        <li>Material: <strong>Nether Star</strong></li>
+        <li>Result: <strong>Tampered Totem</strong></li>
+      </ul>
+
+      <h3>Screenshots</h3>
+      <img src="../images/additions/cure.png" alt="Tampered Totem recipe showcase" loading="lazy">
+
+      <a href="../additions.html" class="back-link">← Back to Additions</a>
+    </section>
+  </main>
+
+  <!-- Site pages menu data -->
+  <script id="sitePages" type="application/json">
+  [
+    { "title": "Home",       "href": "../index.html" },
+    { "title": "Updates",    "href": "../updates.html" },
+    { "title": "Additions",  "href": "../additions.html" },
+    { "title": "Store",      "href": "https://store.ddragon.net", "external": true },
+    { "title": "Discord",    "href": "https://discord.gg/QEj9WFUAbm", "external": true }
+  ]
+  </script>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>
