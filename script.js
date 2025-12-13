@@ -107,7 +107,7 @@ if (sidebar) {
 
 /* ========== TWITCH API HELPERS ========== */
 const TWITCH_CLIENT_ID = "kepxt7g525qaqik9hjmujft89nr68v";
-const TWITCH_APP_TOKEN = "rbunfutslxt5u9aqnhr8iaqf2624mj";
+const TWITCH_APP_TOKEN = "sz5i8oy00pmbxd30wbi69a23nmqm4t";
 
 function twitchHiRes(url) {
   const m = url && url.match(/(.*-profile_image-)(\d+)x\2(\.(?:png|jpe?g|webp))/i);
