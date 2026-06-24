@@ -105,51 +105,54 @@ if (sidebar) {
   });
 }
 
-/* ========== TWITCH API HELPERS ========== */
+/* ========== CREATOR CAROUSEL (Twitch profile cards) ========== */
 const TWITCH_CLIENT_ID = "kepxt7g525qaqik9hjmujft89nr68v";
 const TWITCH_APP_TOKEN = "sz5i8oy00pmbxd30wbi69a23nmqm4t";
 
-function twitchHiRes(url) {
-  const m = url && url.match(/(.*-profile_image-)(\d+)x\2(\.(?:png|jpe?g|webp))/i);
-  if (!m) return { src: url, srcset: "" };
-  const base = m[1], ext = m[3];
-  return {
-    src: `${base}300x300${ext}`,
-    srcset: `${base}300x300${ext} 1x, ${base}600x600${ext} 2x`
-  };
-}
 async function fetchTwitchAvatars(usernames) {
-  if (!TWITCH_CLIENT_ID || !TWITCH_APP_TOKEN) return {};
+  if (!TWITCH_CLIENT_ID || !TWITCH_APP_TOKEN || !usernames.length) return {};
   const url = `https://api.twitch.tv/helix/users?` + usernames.map(u => `login=${encodeURIComponent(u)}`).join("&");
-  const res = await fetch(url, {
-    headers: {
-      "Client-ID": TWITCH_CLIENT_ID,
-      "Authorization": `Bearer ${TWITCH_APP_TOKEN}`
-    }
-  });
-  if (!res.ok) return {};
-  const payload = await res.json();
-  const map = {};
-  (payload.data || []).forEach(user => {
-    map[user.login.toLowerCase()] = user.profile_image_url;
-  });
-  return map;
-}
-async function fetchLiveUsers(usernames) {
-  if (!TWITCH_CLIENT_ID || !TWITCH_APP_TOKEN) return new Set();
-  const url = `https://api.twitch.tv/helix/streams?` + usernames.map(u => `user_login=${encodeURIComponent(u)}`).join("&");
-  const res = await fetch(url, {
-    headers: {
-      "Client-ID": TWITCH_CLIENT_ID,
-      "Authorization": `Bearer ${TWITCH_APP_TOKEN}`
-    }
-  });
-  if (!res.ok) return new Set();
-  const payload = await res.json();
-  return new Set((payload.data || []).map(s => (s.user_login || "").toLowerCase()));
+  try {
+    const res = await fetch(url, {
+      headers: {
+        "Client-ID": TWITCH_CLIENT_ID,
+        "Authorization": `Bearer ${TWITCH_APP_TOKEN}`
+      }
+    });
+    if (!res.ok) return {};
+    const payload = await res.json();
+    const map = {};
+    (payload.data || []).forEach(user => {
+      if (user.login) {
+        map[user.login.toLowerCase()] = user.profile_image_url;
+      }
+    });
+    return map;
+  } catch (err) {
+    console.warn("Twitch avatar fetch failed", err);
+    return {};
+  }
 }
 
-/* ========== CAROUSEL (only run if elements exist) ========== */
+async function fetchLiveUsers(usernames) {
+  if (!TWITCH_CLIENT_ID || !TWITCH_APP_TOKEN || !usernames.length) return new Set();
+  const url = `https://api.twitch.tv/helix/streams?` + usernames.map(u => `user_login=${encodeURIComponent(u)}`).join("&");
+  try {
+    const res = await fetch(url, {
+      headers: {
+        "Client-ID": TWITCH_CLIENT_ID,
+        "Authorization": `Bearer ${TWITCH_APP_TOKEN}`
+      }
+    });
+    if (!res.ok) return new Set();
+    const payload = await res.json();
+    return new Set((payload.data || []).map(s => (s.user_login || "").toLowerCase()));
+  } catch (err) {
+    console.warn("Twitch live status fetch failed", err);
+    return new Set();
+  }
+}
+
 let cards = [];
 if (stage && dotsWrap && prevBtn && nextBtn && creators.length) {
   async function initCarousel() {
@@ -158,9 +161,10 @@ if (stage && dotsWrap && prevBtn && nextBtn && creators.length) {
       fetchTwitchAvatars(logins),
       fetchLiveUsers(logins)
     ]);
+
     stage.innerHTML = "";
     dotsWrap.innerHTML = "";
-    cards = creators.map((c, i) => createCardWithTwitch(c, i, avatarMap, liveSet));
+    cards = creators.map((c, i) => createCreatorCard(c, i, avatarMap, liveSet));
     cards.forEach(c => stage.appendChild(c));
     creators.forEach((_, i) => {
       const b = document.createElement("button");
@@ -173,34 +177,26 @@ if (stage && dotsWrap && prevBtn && nextBtn && creators.length) {
     render();
     startAuto();
   }
-  function createCardWithTwitch({ name, twitch, avatar }, i, avatarMap, liveSet) {
-    const login = (twitch || name || "").toLowerCase();
+  function createCreatorCard({ name, twitch, avatar }, i, avatarMap, liveSet) {
+    const profile = twitch || name;
+    const login = profile.toLowerCase();
     const a = document.createElement("a");
     a.className = "card";
-    a.href = `https://twitch.tv/${twitch || name}`;
+    a.href = `https://twitch.tv/${encodeURIComponent(profile)}`;
     a.target = "_blank";
-    a.rel = "noreferrer";
+    a.rel = "noopener noreferrer";
     a.setAttribute("role", "group");
     a.setAttribute("aria-roledescription", "slide");
-    a.setAttribute("aria-label", `${name} – twitch.tv/${twitch || name}`);
+    a.setAttribute("aria-label", `${name} – twitch.tv/${profile}`);
     a.tabIndex = 0;
     const frame = document.createElement("div");
     frame.className = "frame";
-    const twitchAvatar = avatarMap[login];
-    if (twitchAvatar) {
+    const profileAvatar = avatarMap[login] || avatar;
+    if (profileAvatar) {
       const img = document.createElement("img");
       img.alt = `${name} avatar`;
       img.loading = "lazy";
-      const hi = twitchHiRes(twitchAvatar);
-      img.src = hi.src;
-      if (hi.srcset) img.srcset = hi.srcset;
-      img.sizes = "(max-width: 700px) 90vw, 280px";
-      frame.appendChild(img);
-    } else if (avatar) {
-      const img = document.createElement("img");
-      img.alt = `${name} avatar`;
-      img.loading = "lazy";
-      img.src = avatar;
+      img.src = profileAvatar;
       frame.appendChild(img);
     } else {
       const mono = document.createElement("div");
@@ -224,10 +220,10 @@ if (stage && dotsWrap && prevBtn && nextBtn && creators.length) {
     nm.textContent = name;
     const url = document.createElement("div");
     url.className = "url";
-    url.textContent = `twitch.tv/${twitch || name}`;
+    url.textContent = `twitch.tv/${profile}`;
     const hint = document.createElement("div");
     hint.className = "hint";
-    hint.textContent = "(click to focus)";
+    hint.textContent = "(click to open)";
     meta.append(nm, url, hint);
     a.append(frame, meta);
     a.addEventListener("click", (e) => {
@@ -352,65 +348,4 @@ if (stage && dotsWrap && prevBtn && nextBtn && creators.length) {
   setInterval(fetchStatus, 60000);
 })();
 
-/* ========== YOUTUBE RECS RENDERER ========== */
-(function initYouTubeRecs(){
-  const grid = document.getElementById("videoGrid");
-  const dataEl = document.getElementById("youtubeRecs");
-  if (!grid || !dataEl) return;
 
-  let videos = [];
-  try {
-    videos = JSON.parse(dataEl.textContent.trim());
-  } catch(e) {
-    console.warn("Invalid youtubeRecs JSON", e);
-    return;
-  }
-
-  // Build cards
-  grid.innerHTML = "";
-  videos.forEach(v => {
-    const id = v.id;
-    const url = `https://www.youtube.com/watch?v=${encodeURIComponent(id)}`;
-    const thumbHQ = `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
-    const thumbFallback = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
-
-    const a = document.createElement("a");
-    a.className = "video-card";
-    a.href = url;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    a.setAttribute("aria-label", `${v.title} by ${v.channel || v.creator || "creator"}`);
-
-    const thumb = document.createElement("div");
-    thumb.className = "thumb";
-    const img = document.createElement("img");
-    img.alt = v.title || "Video thumbnail";
-    img.loading = "lazy";
-    img.src = thumbHQ;
-    img.onerror = () => { img.src = thumbFallback; };
-    thumb.appendChild(img);
-
-    // Play overlay
-    const overlay = document.createElement("div");
-    overlay.className = "play";
-    overlay.innerHTML = `
-      <div class="btn" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-      </div>
-    `;
-    thumb.appendChild(overlay);
-
-    const meta = document.createElement("div");
-    meta.className = "meta";
-    const title = document.createElement("div");
-    title.className = "vtitle";
-    title.textContent = v.title || "Untitled video";
-    const byline = document.createElement("div");
-    byline.className = "byline";
-    byline.textContent = `${v.creator || v.channel || ""}${v.published ? " • " + new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(new Date(v.published)) : ""}`;
-
-    meta.append(title, byline);
-    a.append(thumb, meta);
-    grid.appendChild(a);
-  });
-})();
