@@ -107,7 +107,7 @@ if (sidebar) {
 
 /* ========== CREATOR CAROUSEL (Twitch profile cards) ========== */
 const TWITCH_CLIENT_ID = "wjhhtajue0xfz3ryzqjz89ac11y4on";
-const TWITCH_APP_TOKEN = "9ilaak5yj9fzc51itj3zradkqy7wzt";
+const TWITCH_APP_TOKEN = "teu8kc86rywdnmgw8hx01jr77vky3b";
 
 async function fetchTwitchAvatars(usernames) {
   if (!TWITCH_CLIENT_ID || !TWITCH_APP_TOKEN || !usernames.length) return {};
@@ -119,7 +119,10 @@ async function fetchTwitchAvatars(usernames) {
         "Authorization": `Bearer ${TWITCH_APP_TOKEN}`
       }
     });
-    if (!res.ok) return {};
+    if (!res.ok) {
+      if (res.status === 401) console.warn("Twitch avatar fetch failed: invalid or expired token");
+      return {};
+    }
     const payload = await res.json();
     const map = {};
     (payload.data || []).forEach(user => {
@@ -144,7 +147,10 @@ async function fetchLiveUsers(usernames) {
         "Authorization": `Bearer ${TWITCH_APP_TOKEN}`
       }
     });
-    if (!res.ok) return new Set();
+    if (!res.ok) {
+      if (res.status === 401) console.warn("Twitch live status fetch failed: invalid or expired token");
+      return new Set();
+    }
     const payload = await res.json();
     return new Set((payload.data || []).map(s => (s.user_login || "").toLowerCase()));
   } catch (err) {
@@ -177,6 +183,15 @@ if (stage && dotsWrap && prevBtn && nextBtn && creators.length) {
     render();
     startAuto();
   }
+  function appendMonogram(parent, name) {
+    const mono = document.createElement("div");
+    mono.className = "monogram";
+    const span = document.createElement("span");
+    span.textContent = initials(name);
+    mono.appendChild(span);
+    parent.appendChild(mono);
+  }
+
   function createCreatorCard({ name, twitch, avatar }, i, avatarMap, liveSet) {
     const profile = twitch || name;
     const login = profile.toLowerCase();
@@ -197,14 +212,13 @@ if (stage && dotsWrap && prevBtn && nextBtn && creators.length) {
       img.alt = `${name} avatar`;
       img.loading = "lazy";
       img.src = profileAvatar;
+      img.onerror = () => {
+        img.remove();
+        appendMonogram(frame, name);
+      };
       frame.appendChild(img);
     } else {
-      const mono = document.createElement("div");
-      mono.className = "monogram";
-      const span = document.createElement("span");
-      span.textContent = initials(name);
-      mono.appendChild(span);
-      frame.appendChild(mono);
+      appendMonogram(frame, name);
     }
     if (liveSet.has(login)) {
       const badge = document.createElement("div");
