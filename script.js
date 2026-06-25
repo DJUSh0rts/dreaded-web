@@ -106,8 +106,8 @@ if (sidebar) {
 }
 
 /* ========== CREATOR CAROUSEL (Twitch profile cards) ========== */
-const TWITCH_CLIENT_ID = "kepxt7g525qaqik9hjmujft89nr68v";
-const TWITCH_APP_TOKEN = "sz5i8oy00pmbxd30wbi69a23nmqm4t";
+const TWITCH_CLIENT_ID = "wjhhtajue0xfz3ryzqjz89ac11y4on";
+const TWITCH_APP_TOKEN = "gvdyjpgs5e7tpqezi7nxgyhy6hmomx";
 
 async function fetchTwitchAvatars(usernames) {
   if (!TWITCH_CLIENT_ID || !TWITCH_APP_TOKEN || !usernames.length) return {};
