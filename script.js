@@ -107,7 +107,7 @@ if (sidebar) {
 
 /* ========== CREATOR CAROUSEL (Twitch profile cards) ========== */
 const TWITCH_CLIENT_ID = "wjhhtajue0xfz3ryzqjz89ac11y4on";
-const TWITCH_APP_TOKEN = "gvdyjpgs5e7tpqezi7nxgyhy6hmomx";
+const TWITCH_APP_TOKEN = "9ilaak5yj9fzc51itj3zradkqy7wzt";
 
 async function fetchTwitchAvatars(usernames) {
   if (!TWITCH_CLIENT_ID || !TWITCH_APP_TOKEN || !usernames.length) return {};
