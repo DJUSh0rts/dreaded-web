@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dreaded Dragons – Demonic Scythe</title>
+  <title>Dreaded Dragons – Ghast Harnesses</title>
   <link rel="stylesheet" href="../styles.css" />
 </head>
 
@@ -34,96 +34,82 @@
 
   <main class="container">
     <section class="hero">
-      <p>Full details for the <strong>Demonic Scythe</strong> addition to the SMP.</p>
+      <p>Details for the <strong>Ghast Harness</strong> items and the <strong>Motus</strong> enchantment.</p>
     </section>
 
     <section class="addition-detail">
-      <h2>Demonic Scythe</h2>
-      <p class="subtitle">
-        The Demonic Scythe is a powerful weapon with effects based on different crops you grow.
-      </p>
+      <h2>Ghast Harnesses & Motus</h2>
+      <p class="subtitle">Harnesses are wearable items for ghasts and similar entities. The Motus enchantment increases flying speed when applied to harnesses.</p>
 
-      <h3>Details</h3>
+      <h3>Motus Enchantment</h3>
       <ul>
-        <li>The Demonic Scythe is a powerful weapon built around crop-based effects.</li>
-        <li>Its effects change depending on the crops you use.
-        </li>
+        <li><strong>Description:</strong> Motus — increases flying speed when on harnesses.</li>
+        <li><strong>Max level:</strong> 3</li>
+        <li><strong>Cost:</strong> base 5, +10 per level above first. Anvil cost: 7</li>
+        <li><strong>Applies to:</strong> Harness items (tag: <code>#minecraft:harnesses</code>)</li>
+        <li><strong>Effect:</strong> Adds to the <em>flying_speed</em> attribute: base +0.025, +0.015 per level above first.</li>
       </ul>
 
-      <h3>Crop Effects</h3>
-      <p class="recipe-caption">Use a crop in the offhand while the scythe is active to trigger its effect. Shown levels are the actual in-game levels (Minecraft command levels are zero-indexed).</p>
-      <table class="recipe-grid" style="width:100%; table-layout:fixed;">
-        <tr>
-          <td><strong>Crop</strong></td>
-          <td><strong>Effect</strong></td>
-          <td><strong>Duration</strong></td>
-          <td><strong>In-game Level</strong></td>
-        </tr>
-        <tr>
-          <td>Carrot</td>
-          <td>Night Vision</td>
-          <td>2s</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>Sweet Berries</td>
-          <td>Speed</td>
-          <td>2s</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Potato</td>
-          <td>Strength</td>
-          <td>2s</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Golden Carrot</td>
-          <td>Fire Resistance</td>
-          <td>3s</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>Chorus Fruit</td>
-          <td>Levitation</td>
-          <td>2s</td>
-          <td>2</td>
-        </tr>
-      </table>
-
-      <h3>Tips</h3>
-      <ul>
-        <li>Use the Demonic Scythe when you want a hard-hitting weapon that works best in controlled fights.</li>
-        <li>Keep a food item ready in your offhand to maximize the weapon's unique bonuses.
-        </li>
-      </ul>
-
-      <h3>Recipe</h3>
+      <h3>Recipes</h3>
       <div class="recipe">
+        <p class="recipe-caption">Base harness (example — black harness)</p>
         <table class="recipe-grid">
           <tr>
-            <td>Netherite Ingot</td>
-            <td>Diamond</td>
-            <td></td>
+            <td>Leather</td>
+            <td>Leather</td>
+            <td>Leather</td>
+          </tr>
+          <tr>
+            <td>Glass</td>
+            <td>Black Wool</td>
+            <td>Glass</td>
           </tr>
           <tr>
             <td></td>
-            <td>Stick</td>
-            <td>Netherite Ingot</td>
-          </tr>
-          <tr>
-            <td>Stick</td>
             <td></td>
             <td></td>
           </tr>
         </table>
         <div class="recipe-result">
           <div class="result-box">
-            <strong>Demonic Scythe</strong>
-            <div class="recipe-caption">Custom scythe (iron hoe with custom components)</div>
+            <strong>Black Harness</strong>
+            <div class="recipe-caption">Shaped: three leather above glass-black wool-glass row</div>
           </div>
         </div>
       </div>
+
+      <div class="recipe">
+        <p class="recipe-caption">Recolor harness (shapeless)</p>
+        <table class="recipe-grid">
+          <tr>
+            <td>Magenta Dye</td>
+            <td>Any Harness</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <div class="recipe-result">
+          <div class="result-box">
+            <strong>Colored Harness</strong>
+            <div class="recipe-caption">Shapeless: combine a dye with an existing harness to recolor it.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Tips</h3>
+      <ul>
+        <li>Apply Motus to harnesses you intend to use for mobility boosts.</li>
+        <li>Use dyed harnesses to mark different ghasts or mounts visually.</li>
+      </ul>
 
       <a href="../additions.html" class="back-link">← Back to Additions</a>
     </section>

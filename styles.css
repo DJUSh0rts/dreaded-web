@@ -379,6 +379,26 @@ body {
   overflow-wrap: break-word; /* break long text like IPs */
 }
 
+/* Twitch LIVE badge on creator cards */
+.live-badge{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(180deg, #ff6b6b 0%, #c0392b 100%);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.12);
+  font-weight: 900;
+  font-size: .85rem;
+  letter-spacing: .6px;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.45);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
+  z-index: 40;
+  display: inline-block;
+}
+.card.live{ outline: 3px solid color-mix(in oklab, #ff6b6b 22%, var(--stone-800)); }
+
 /* Title row */
 .status-top {
   display: flex;
@@ -398,6 +418,20 @@ body {
 .dot.online { background: var(--leaf-500); }
 .dot.offline { background: #c0392b; }
 .dot.unknown { background: var(--stone-600); }
+
+/* Recipe grid */
+.recipe {
+  margin-top: 1rem;
+  background: var(--stone-800);
+  border: 2px solid var(--stone-700);
+  border-radius: 12px;
+  padding: .9rem;
+}
+.recipe-grid{ border-collapse: collapse; margin: .5rem 0; }
+.recipe-grid td{ width:72px; height:72px; text-align:center; vertical-align:middle; border:2px solid var(--stone-700); background: var(--stone-850); padding:.25rem; font-size:.85rem; }
+.recipe-result{ display:flex; gap:.6rem; align-items:center; margin-top:.6rem; }
+.result-box{ background: var(--stone-800); border: 2px solid var(--stone-700); padding:.5rem .8rem; border-radius: 8px; }
+.recipe-caption{ color: var(--stone-300); font-size: .9rem; margin-top:.4rem; }
 
 /* Info grid */
 .status-grid {
