@@ -1,0 +1,1 @@
+execute if block ~ ~ ~ carved_pumpkin if block ~ ~-1 ~ hay_block run function hay_dummy:check_build/summon_dummy

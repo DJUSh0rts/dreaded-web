@@ -1,0 +1,19 @@
+{
+    "criteria": {
+        "use_firefly_bottle": {
+            "trigger": "consume_item",
+            "conditions": {
+                "item": {
+                    "components": {
+                        "custom_data": {
+                            "dpack-tool": "firefly_bottle"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "firefly_bottle:bottle/place"
+    }
+}

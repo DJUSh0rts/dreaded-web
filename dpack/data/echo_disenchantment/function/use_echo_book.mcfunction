@@ -1,0 +1,2 @@
+data modify storage echo_disenchantment:temp_data args.enchants set from entity @s SelectedItem.components."minecraft:enchantments"
+execute if data storage echo_disenchantment:temp_data args run function echo_disenchantment:apply_enchants with storage echo_disenchantment:temp_data args

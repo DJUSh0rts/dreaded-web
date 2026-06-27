@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "place_block": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "#is_trigger_block"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "hay_dummy:init_place_block"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:end_stone",
+      "components": {
+        "item_model": "world_advancements:world_icon"
+      }
+    },
+    "title": "World Goals",
+    "description": "Advancements achieved as a community",
+    "background": "minecraft:block/dirt",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

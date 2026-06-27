@@ -1,0 +1,19 @@
+{
+    "criteria": {
+        "eat_mini_mushroon": {
+            "trigger": "consume_item",
+            "conditions": {
+                "item": {
+                    "components": {
+                        "custom_data": {
+                            "dpack-food": "shrink_mushroom"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "size_shrooms:eat/shrink_mushroom"
+    }
+}

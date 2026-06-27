@@ -1,0 +1,1 @@
+execute unless data storage end_toggle:data enabled run data merge storage end_toggle:data {position:{x:0,y:0,z:0},enabled:0b}

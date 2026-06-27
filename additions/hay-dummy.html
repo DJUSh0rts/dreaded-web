@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dreaded Dragons &ndash; Hay Dummy</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body data-page="Additions">
+  <header class="site-header">
+    <button class="menu-btn" aria-label="Open menu" aria-haspopup="dialog" aria-controls="sidebar" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" fill="none" stroke-width="2"/>
+      </svg>
+    </button>
+    <h1 class="logo">Dreaded <span>Dragons</span> &ndash; Addition</h1>
+  </header>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="sidebar" id="sidebar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="sidebarTitle">
+    <div class="sidebar-head">
+      <h2 class="sidebar-title" id="sidebarTitle">Menu</h2>
+      <button class="close-btn" id="closeSidebar" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" fill="none" stroke-width="2"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="side-nav">
+      <ul id="menuList" class="menu-list"></ul>
+    </nav>
+  </aside>
+
+  <main class="container">
+    <section class="hero">
+      <p>Full details for the <strong>Hay Dummy</strong> addition to the SMP.</p>
+    </section>
+
+    <section class="addition-detail">
+      <h2>Hay Dummy</h2>
+      <p class="subtitle">
+        The Hay Dummy is a sturdy training target for testing powerful weapons without wasting time on real mobs.
+      </p>
+
+      <h3>How It Works</h3>
+      <ul>
+        <li>Place a carved pumpkin on top of a hay bale to summon the Hay Dummy.</li>
+        <li>The dummy has 40 health and displays its current health above its head.</li>
+        <li>After it stops taking player damage, it heals back toward full health over time.</li>
+        <li>If a nearby player holds wheat, the dummy turns to look at them.</li>
+      </ul>
+
+      <h3>Tips</h3>
+      <ul>
+        <li>Use it to compare weapon damage, enchantments, and combat setups in a controlled spot.</li>
+        <li>Hold wheat when you want the dummy to face you for cleaner tests and screenshots.</li>
+        <li>Give it a little time between heavy hits if you want to watch the healing behavior.</li>
+      </ul>
+
+      <h3>Summoning</h3>
+      <div class="recipe">
+        <table class="recipe-grid">
+          <tr>
+            <td></td>
+            <td>Carved Pumpkin</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Hay Bale</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <div class="recipe-result">
+          <div class="result-box">
+            <strong>Hay Dummy</strong>
+            <div class="recipe-caption">Place the pumpkin directly on the hay bale to create the training target.</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="../additions.html" class="back-link">&larr; Back to Additions</a>
+    </section>
+  </main>
+
+  <script id="sitePages" type="application/json">
+  [
+    { "title": "Home",       "href": "../index.html" },
+    { "title": "Updates",    "href": "../updates.html" },
+    { "title": "Additions",  "href": "../additions.html" },
+    { "title": "Discord",    "href": "https://discord.gg/QEj9WFUAbm", "external": true }
+  ]
+  </script>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "kill_mob": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "killing_blow": {
+          "is_direct": true
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "group_advancements:triggers/kill_mob"
+  }
+}

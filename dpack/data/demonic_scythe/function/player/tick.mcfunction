@@ -1,0 +1,1 @@
+execute if items entity @s weapon.offhand #minecraft:scythe_foods run function demonic_scythe:food/tick with entity @s equipment.offhand

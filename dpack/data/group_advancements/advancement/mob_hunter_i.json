@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:wooden_sword"
+    },
+    "title": "Executioner I",
+    "description": "Kill 100 mobs",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "frame": "goal"
+  },
+  "parent": "group_advancements:root",
+  "criteria": {
+    "impossible":{
+        "trigger": "impossible"
+    }
+  }
+}

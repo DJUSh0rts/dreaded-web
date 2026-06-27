@@ -1,0 +1,67 @@
+{
+  "type": "notice",
+  "title": "Dreaded SMP Rules",
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "to play on this server you must follow these rules..",
+        "italic": true,
+        "color": "gray"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "1. No cheating or suspicious activity"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "2. Do not be Toxic or discriminatory"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "3. No griefing, stealing (Including Farms)"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "4. Explosives are not allowed in combat (Crystals, TNT Minecarts, etc.)"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "5. Trapping players is not allowed"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "6. Don't go too far away from spawn"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "7. Attacking players with much less gear is disallowed"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "8. Players who have PvP Disabled can not kill or be killed by other players"
+      }
+    }
+  ],
+  "can_close_with_escape": false,
+  "pause": false,
+  "action": {
+    "label": "Accept"
+  }
+}

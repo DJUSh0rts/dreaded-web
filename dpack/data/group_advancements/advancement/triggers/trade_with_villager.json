@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "villager_trade": {
+      "trigger": "minecraft:villager_trade"
+    }
+  },
+  "rewards": {
+    "function": "group_advancements:triggers/trade_with_villager"
+  }
+}

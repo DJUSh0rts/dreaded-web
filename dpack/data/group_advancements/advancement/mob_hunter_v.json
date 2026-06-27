@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:netherite_sword"
+    },
+    "title": "Executioner V",
+    "description": "Kill 50000 mobs",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "frame": "goal"
+  },
+  "parent": "group_advancements:mob_hunter_iv",
+  "criteria": {
+    "impossible":{
+        "trigger": "impossible"
+    }
+  }
+}

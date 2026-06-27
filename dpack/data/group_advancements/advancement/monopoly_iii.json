@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:gold_block"
+    },
+    "title": "Monopoly III",
+    "description": "Trade 1000 times",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "frame": "goal"
+  },
+  "parent": "group_advancements:monopoly_ii",
+  "criteria": {
+    "impossible":{
+        "trigger": "impossible"
+    }
+  }
+}

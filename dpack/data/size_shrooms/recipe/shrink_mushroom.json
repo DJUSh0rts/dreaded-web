@@ -1,0 +1,26 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "LLL",
+        "LML",
+        "LLL"
+    ],
+    "key": {
+        "L": "lapis_lazuli",
+        "M": "red_mushroom"
+    },
+    "result": {
+        "id": "red_mushroom",
+        "components": {
+            "consumable": {},
+            "item_model": "size_shrooms:blue_mushroom",
+            "item_name": "Shrink Mushroom",
+            "max_stack_size": 1,
+            "custom_data": {
+                "dpack-food": "shrink_mushroom"
+            },
+            "enchantment_glint_override": true,
+            "rarity": "uncommon"
+        }
+    }
+}

@@ -1,0 +1,1 @@
+give @s bat_spawn_egg[item_name="Enhanced Sculk Shrieker",entity_data={id:"minecraft:item_display",Tags:["enhanced_sculk_shrieker_model","spawn"]},item_model="echo_disenchantment:enhanced_sculk_shrieker"] 1

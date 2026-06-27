@@ -1,0 +1,1 @@
+scoreboard objectives add dpack.size_shrooms.shrink_mushroom.ticks dummy

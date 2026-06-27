@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:emerald"
+    },
+    "title": "Monopoly IV",
+    "description": "Trade 10000 times",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "frame": "goal"
+  },
+  "parent": "group_advancements:monopoly_iii",
+  "criteria": {
+    "impossible":{
+        "trigger": "impossible"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:emerald_block"
+    },
+    "title": "Monopoly V",
+    "description": "Trade 100000 times",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "frame": "goal"
+  },
+  "parent": "group_advancements:monopoly_iv",
+  "criteria": {
+    "impossible":{
+        "trigger": "impossible"
+    }
+  }
+}

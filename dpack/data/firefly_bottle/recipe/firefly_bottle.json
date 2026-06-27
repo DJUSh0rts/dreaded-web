@@ -1,0 +1,37 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    "glass_bottle",
+    "firefly_bush"
+  ],
+  "result": {
+    "id": "wooden_sword",
+    "components": {
+      "item_name": "Firefly Bottle",
+      "max_stack_size": 16,
+      "!max_damage": {},
+      "item_model": "firefly_bottle:firefly_bottle",
+      "custom_data": {
+        "dpack-tool": "firefly_bottle"
+      },
+      "consumable": {
+        "animation": "none",
+        "has_consume_particles": false,
+        "sound": "entity.splash_potion.break",
+        "consume_seconds": 0.01
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:attack_damage",
+          "id": "disable_damage",
+          "amount": 0,
+          "operation": "add_value",
+          "slot": "mainhand",
+          "display": {
+            "type": "hidden"
+          }
+        }
+      ]
+    }
+  }
+}

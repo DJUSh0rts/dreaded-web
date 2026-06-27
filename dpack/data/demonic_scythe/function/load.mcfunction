@@ -1,0 +1,1 @@
+scoreboard objectives add dpack.scythe.food.ticks dummy

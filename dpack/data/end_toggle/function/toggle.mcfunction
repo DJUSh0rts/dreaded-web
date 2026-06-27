@@ -1,0 +1,2 @@
+execute if data storage end_toggle:data {enabled:1b} run return run data modify storage end_toggle:data enabled set value 0b
+execute if data storage end_toggle:data {enabled:0b} run return run data modify storage end_toggle:data enabled set value 1b
