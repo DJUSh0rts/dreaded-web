@@ -1,1 +1,0 @@
-scoreboard objectives add rules_read trigger

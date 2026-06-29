@@ -1,1 +1,0 @@
-effect give @s speed 2 1

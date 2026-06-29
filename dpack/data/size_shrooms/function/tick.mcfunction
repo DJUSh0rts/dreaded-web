@@ -1,2 +1,0 @@
-execute as @e[scores={dpack.size_shrooms.shrink_mushroom.ticks=1..}] run scoreboard players remove @s dpack.size_shrooms.shrink_mushroom.ticks 1
-execute as @e[scores={dpack.size_shrooms.shrink_mushroom.ticks=..0}] run function size_shrooms:timer/stop/shrink_mushroom

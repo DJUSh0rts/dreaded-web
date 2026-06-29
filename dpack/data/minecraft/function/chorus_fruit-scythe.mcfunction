@@ -1,1 +1,0 @@
-effect give @s levitation 2 1

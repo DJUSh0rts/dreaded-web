@@ -1,1 +1,0 @@
-effect give @s night_vision 2 0

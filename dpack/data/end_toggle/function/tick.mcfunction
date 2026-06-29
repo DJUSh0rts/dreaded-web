@@ -1,2 +1,0 @@
-execute if data storage end_toggle:data {enabled:1b} as @a at @s if predicate {condition:"location_check",predicate:{dimension:"minecraft:the_end"}} run function end_toggle:player/triggered with storage end_toggle:data position
-execute if data storage end_toggle:data {enabled:1b} as @a[advancements={end/root=true}] run advancement revoke @s from end/root

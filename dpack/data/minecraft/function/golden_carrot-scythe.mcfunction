@@ -1,1 +1,0 @@
-effect give @s fire_resistance 3 0

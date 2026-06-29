@@ -1,1 +1,0 @@
-$data modify storage herobrine:data bossbars[] append value {ent:$(me),bossbar:$(id)}

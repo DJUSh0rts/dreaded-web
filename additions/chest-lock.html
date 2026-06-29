@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dreaded Dragons &ndash; Chest Lock</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body data-page="Additions">
+  <header class="site-header">
+    <button class="menu-btn" aria-label="Open menu" aria-haspopup="dialog" aria-controls="sidebar" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" fill="none" stroke-width="2"/>
+      </svg>
+    </button>
+    <h1 class="logo">Dreaded <span>Dragons</span> &ndash; Addition</h1>
+  </header>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="sidebar" id="sidebar" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="sidebarTitle">
+    <div class="sidebar-head">
+      <h2 class="sidebar-title" id="sidebarTitle">Menu</h2>
+      <button class="close-btn" id="closeSidebar" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" fill="none" stroke-width="2"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="side-nav">
+      <ul id="menuList" class="menu-list"></ul>
+    </nav>
+  </aside>
+
+  <main class="container">
+    <section class="hero">
+      <p>Full details for the <strong>Chest Lock</strong> addition to the SMP.</p>
+    </section>
+
+    <section class="addition-detail">
+      <h2>Chest Lock</h2>
+      <p class="subtitle">
+        A lock system for protecting storage containers with easy management.
+      </p>
+
+      <h3>How It Works</h3>
+      <ul>
+        <li>Shift + Right-click on a chest to open the gui or do /cl gui. You can add trusted players, passwords, and stop hopper interaction.</li>
+        <li>Other players will be locked out and shown a chat saying its your chest.</li>
+        <li>This works for chests, barrels and furnaces.</li>
+      </ul>
+
+      <h3>Commands</h3>
+      <table class="command-table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cmd-chip">/cl gui</span></td>
+            <td>Command for opening gui for chest you are looking at.</td>
+          </tr>
+          <tr>
+            <td><span class="cmd-chip">/cl trust &lt;player&gt;</player></span></td>
+            <td>Add a trusted player to the chest you are looking at.</td>
+          </tr>
+          <tr>
+            <td><span class="cmd-chip">/cl untrust &lt;player&gt;</span></td>
+            <td>Remove a trusted player from the chest you are looking at.</td>
+          </tr>
+          <tr>
+            <td><span class="cmd-chip">/cl password &lt;01234&gt;</span></td>
+            <td>Attempt to access protected chest you are looking at with password.</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <a href="../additions.html" class="back-link">&larr; Back to Additions</a>
+    </section>
+  </main>
+
+  <script id="sitePages" type="application/json">
+  [
+    { "title": "Home",       "href": "../index.html" },
+    { "title": "Updates",    "href": "../updates.html" },
+    { "title": "Additions",  "href": "../additions.html" },
+    { "title": "Discord",    "href": "https://discord.gg/QEj9WFUAbm", "external": true }
+  ]
+  </script>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>
